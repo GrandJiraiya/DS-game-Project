@@ -1,0 +1,50 @@
+diff --git a/Makefile b/Makefile
+index fd441b2de1c6c94306b1355f940812caeacf65f5..80336b49072c050212380315a17d0190e6716154 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,25 +1,44 @@
+ # Ashen Frontier DS - BlocksDS-style starter Makefile
+-# Adjust BLOCKSDS path as needed for your machine.
++# You can override BLOCKSDS/WONDERFUL_TOOLCHAIN from the command line if needed.
++
++# Prefer standard install paths, but auto-detect this container's path if present.
++BLOCKSDS            ?= /opt/blocksds/core
++WONDERFUL_TOOLCHAIN ?= /opt/wonderful
++
++ifeq (,$(wildcard $(BLOCKSDS)/sys/default_makefiles/rom_arm9/Makefile))
++  ifneq (,$(wildcard /workspace/thirdparty/blocksds/core/sys/default_makefiles/rom_arm9/Makefile))
++    BLOCKSDS := /workspace/thirdparty/blocksds/core
++  endif
++endif
++
++ifeq (,$(wildcard $(WONDERFUL_TOOLCHAIN)/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc))
++  ifneq (,$(wildcard /workspace/toolchain/gcc-arm-none-eabi/bin/arm-none-eabi-gcc))
++    WONDERFUL_TOOLCHAIN := /workspace
++  endif
++endif
++
++export BLOCKSDS
++export WONDERFUL_TOOLCHAIN
+ 
+ NAME          := ashen_frontier_ds
+ GAME_TITLE    := Ashen Frontier DS
+ GAME_SUBTITLE := One-Zone RPG Slice
+ GAME_AUTHOR   := Crash / OpenAI
+ GAME_ICON     := icon.bmp
+ 
+ SOURCEDIRS    := source
+ INCLUDEDIRS   := include
+ GFXDIRS       :=
+ BINDIRS       :=
+ AUDIODIRS     :=
+ NITROFSDIR    :=
+ 
+ # Use a standard ARM7 core from BlocksDS.
+ ARM7ELF       := $(BLOCKSDS)/sys/arm7/main_core/arm7_maxmod.elf
+ 
+ LIBS          := -lnds9
+ LIBDIRS       := $(BLOCKSDS)/libs/libnds
+ 
+ # This include is provided by BlocksDS. If your setup differs,
+ # replace it with the correct shared rules include.
+ include $(BLOCKSDS)/sys/default_makefiles/rom_arm9/Makefile
