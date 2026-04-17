@@ -1,0 +1,9 @@
+# Build artifacts
+build/
+*.nds
+*.elf
+*.dump
+*.map
+
+# Local tool cache/state
+*.log
