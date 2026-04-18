@@ -4,6 +4,14 @@
 BLOCKSDS            ?= /opt/blocksds/core
 WONDERFUL_TOOLCHAIN ?= /opt/wonderful
 
+ifeq (,$(wildcard $(BLOCKSDS)/sys/default_makefiles/rom_arm9/Makefile))
+  ifneq (,$(wildcard /workspace/thirdparty/blocksds/core/sys/default_makefiles/rom_arm9/Makefile))
+    BLOCKSDS := /workspace/thirdparty/blocksds/core
+  else ifneq (,$(wildcard /workspace/thirdparty/blocksds/sys/default_makefiles/rom_arm9/Makefile))
+    BLOCKSDS := /workspace/thirdparty/blocksds
+  endif
+endif
+
 export BLOCKSDS
 export WONDERFUL_TOOLCHAIN
 
