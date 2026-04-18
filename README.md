@@ -19,6 +19,7 @@ This is not a fake ROM wrapper. It is a **real DS homebrew source project scaffo
 - D-pad movement
 - A to interact / open chest / trigger exit
 - B to attack adjacent enemy
+- L (or touch lower-right) to use a potion
 - X to toggle quest log
 - simple HP / XP / gold / potion stats
 - quest state machine
@@ -29,6 +30,7 @@ This is not a fake ROM wrapper. It is a **real DS homebrew source project scaffo
 - **D-pad**: move
 - **A**: interact
 - **B**: attack
+- **L**: use potion
 - **X**: quest log on/off
 - **START**: restart run
 
@@ -54,7 +56,7 @@ You will need a real DS homebrew toolchain installed on your machine. This conta
 
 ### Quick test checklist before Delta import
 - Boot test in an emulator (melonDS or Delta desktop equivalent if available).
-- Confirm controls: D-pad movement, `A` interact, `B` attack, `X` quest log, `START` restart.
+- Confirm controls: D-pad movement, `A` interact, `B` attack, `L` potion, `X` quest log, `START` restart.
 - Kill the boss, interact with exit beacon, and verify completion text.
 - Rebuild from clean state (`make clean && make ...`) to ensure reproducibility.
 
