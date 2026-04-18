@@ -1,8 +1,0 @@
-%FILES%
-bin/
-bin/wf-patchelf
-pacman/
-pacman/hooks/
-pacman/hooks/10-patchelf.hook
-pacman/hooks/10-patchelf.sh
-

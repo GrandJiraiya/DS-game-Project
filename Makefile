@@ -19,7 +19,7 @@ NAME          := ashen_frontier_ds
 GAME_TITLE    := Ashen Frontier DS
 GAME_SUBTITLE := One-Zone RPG Slice
 GAME_AUTHOR   := Crash / OpenAI
-GAME_ICON     := icon.bmp
+GAME_ICON     := assets/icon.bmp
 
 SOURCEDIRS    := source
 INCLUDEDIRS   := include

@@ -71,8 +71,8 @@ You will need a real DS homebrew toolchain installed on your machine. This conta
 ## Project structure
 - `source/main.c` – full gameplay loop
 - `Makefile` – BlocksDS-style starter build file
-- `DESIGN.md` – level and feature plan
-- `icon.bmp` – placeholder ROM icon
+- `docs/DESIGN.md` – level and feature plan and vertical-slice intent
+- `assets/icon.bmp` – placeholder ROM icon
 
 ## One honest limitation
 The current prototype is **mechanically RPG-like**, but visually minimalist so it stays realistic for a first DS homebrew pass. It captures the structure and feel, not modern 3D spectacle. The DS is a brave little brick, not a PS5 in cosplay.
