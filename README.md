@@ -46,9 +46,17 @@ You will need a real DS homebrew toolchain installed on your machine. This conta
 ### Expected flow
 1. Install **BlocksDS** (or devkitPro/devkitARM if you prefer legacy flow).
 2. Open this folder in your terminal.
-3. Adjust the `Makefile` paths if your setup differs.
-4. Build the ROM.
+3. Build with your BlocksDS path if needed:
+   - `make BLOCKSDS=/path/to/blocksds/core`
+4. Confirm an `.nds` ROM was produced:
+   - `find . -maxdepth 3 -name "*.nds"`
 5. Import the resulting `.nds` into Delta on iPhone.
+
+### Quick test checklist before Delta import
+- Boot test in an emulator (melonDS or Delta desktop equivalent if available).
+- Confirm controls: D-pad movement, `A` interact, `B` attack, `X` quest log, `START` restart.
+- Kill the boss, interact with exit beacon, and verify completion text.
+- Rebuild from clean state (`make clean && make ...`) to ensure reproducibility.
 
 ## Suggested next upgrades
 - sprite art instead of ASCII/tile chars
